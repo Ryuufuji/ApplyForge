@@ -1,0 +1,45 @@
+{
+  "name": "applyforge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ApplyForge — plateforme de recherche d'emploi et postulation automatisée en 1 clic",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "electron": "electron .",
+    "electron:dev": "APPLYFORGE_DEV_URL=http://127.0.0.1:3000 electron .",
+    "pack:linux": "node scripts/package-linux.js",
+    "pack:appimage": "bash scripts/build-appimage.sh",
+    "pack:deb": "python3 scripts/build-deb.py",
+    "pack:all": "npm run build && npm run pack:linux && npm run pack:appimage && npm run pack:deb"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.11.7",
+    "lucide-react": "^0.451.0",
+    "mammoth": "^1.13.0",
+    "next": "14.2.35",
+    "pdfjs-dist": "^6.4.299",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.3.0",
+    "@types/node": "^20.16.11",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "electron": "^33.4.11",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.3"
+  },
+  "allowScripts": {
+    "electron@33.4.11": true
+  }
+}
